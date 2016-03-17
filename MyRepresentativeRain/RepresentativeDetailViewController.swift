@@ -13,7 +13,6 @@ class RepresentativeDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var districtLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
@@ -30,7 +29,6 @@ class RepresentativeDetailViewController: UIViewController {
         self.nameLabel.text = representative.name
         self.partyLabel.text = representative.party
         self.stateLabel.text = representative.state + " - " + representative.district
-        //self.districtLabel.text = representative.district
         self.phoneLabel.text = representative.phone
         self.addressLabel.text = representative.office
         self.websiteLabel.text = representative.link
