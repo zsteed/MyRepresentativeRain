@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Representative Search View Controller-->
@@ -17,24 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-lh-hS2">
-                                <rect key="frame" x="0.0" y="87" width="600" height="216"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-v0-kUJ">
-                                <rect key="frame" x="228" y="333" width="144" height="30"/>
-                                <state key="normal" title="Find Representatives"/>
-                                <connections>
-                                    <segue destination="w9p-mF-1bo" kind="show" identifier="toRepresentativeView" id="8iW-rh-aeY"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-ad-M2H">
-                                <rect key="frame" x="282" y="403" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-Fg-2RW">
+                                <rect key="frame" x="20" y="64" width="560" height="400"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-lh-hS2">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="363"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="mah-HI-VpN" id="bxf-8l-ipU"/>
+                                            <outlet property="delegate" destination="mah-HI-VpN" id="EZU-wD-qiE"/>
+                                        </connections>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9M-eg-vfj">
+                                        <rect key="frame" x="0.0" y="363" width="560" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-v0-kUJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="523" height="37"/>
+                                                <state key="normal" title="Find Representatives"/>
+                                                <connections>
+                                                    <action selector="searchButtonTapped:" destination="mah-HI-VpN" eventType="touchUpInside" id="48t-FO-m5k"/>
+                                                </connections>
+                                            </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-ad-M2H">
+                                                <rect key="frame" x="523" y="0.0" width="37" height="37"/>
+                                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="UJQ-Fg-2RW" secondAttribute="leading" id="0ji-5f-IXy"/>
+                            <constraint firstItem="f2S-LH-kxR" firstAttribute="top" secondItem="UJQ-Fg-2RW" secondAttribute="bottom" constant="136" id="B2h-GJ-vAV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UJQ-Fg-2RW" secondAttribute="trailing" id="N4W-Ms-eIl"/>
+                            <constraint firstItem="UJQ-Fg-2RW" firstAttribute="top" secondItem="i6s-41-Vq9" secondAttribute="bottom" id="jaM-mN-PIx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JyU-vB-5gU"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="CY3-ad-M2H" id="eqU-mL-vez"/>
+                        <outlet property="pickerView" destination="wqi-lh-hS2" id="FKR-Na-8In"/>
+                        <segue destination="w9p-mF-1bo" kind="show" identifier="toListView" id="Itq-ep-ncL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zj-QM-Bqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,6 +170,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="uPP-9D-Ekc" id="rzY-wF-lqz"/>
+                        <outlet property="districtLabel" destination="Lwa-ik-Wli" id="9tF-eF-yGV"/>
+                        <outlet property="nameLabel" destination="EeU-Uw-1XY" id="Rdl-e5-6vo"/>
+                        <outlet property="partyLabel" destination="20Q-V3-nnH" id="fbp-NW-PYd"/>
+                        <outlet property="phoneLabel" destination="6QW-l7-opF" id="8pP-nO-BPP"/>
+                        <outlet property="stateLabel" destination="mMa-8R-1oA" id="njP-oj-Ii0"/>
+                        <outlet property="websiteLabel" destination="Y7S-Bf-50F" id="YbU-Cy-Jwl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvj-By-WPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
