@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Representative Search View Controller-->
         <scene sceneID="I5H-TM-3LS">
             <objects>
-                <viewController id="mah-HI-VpN" sceneMemberID="viewController">
+                <viewController id="mah-HI-VpN" customClass="RepresentativeSearchViewController" customModule="MyRepresentativeRain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i6s-41-Vq9"/>
                         <viewControllerLayoutGuide type="bottom" id="f2S-LH-kxR"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="912" y="353"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Representative List Table View Controller-->
         <scene sceneID="j4m-kH-ygf">
             <objects>
-                <tableViewController id="w9p-mF-1bo" sceneMemberID="viewController">
+                <tableViewController id="w9p-mF-1bo" customClass="RepresentativeListTableViewController" customModule="MyRepresentativeRain" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fCi-HF-3fO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="1599" y="353"/>
         </scene>
-        <!--View Controller-->
+        <!--Representative Detail View Controller-->
         <scene sceneID="RxD-zR-I6d">
             <objects>
-                <viewController id="hGw-an-YcP" sceneMemberID="viewController">
+                <viewController id="hGw-an-YcP" customClass="RepresentativeDetailViewController" customModule="MyRepresentativeRain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iQb-rW-H4i"/>
                         <viewControllerLayoutGuide type="bottom" id="Gpv-Ra-6AX"/>

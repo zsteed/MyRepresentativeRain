@@ -11,6 +11,12 @@
 		9277B23A1C9B0DB200911514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9277B2381C9B0DB200911514 /* Main.storyboard */; };
 		9277B23C1C9B0DB200911514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9277B23B1C9B0DB200911514 /* Assets.xcassets */; };
 		9277B23F1C9B0DB200911514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9277B23D1C9B0DB200911514 /* LaunchScreen.storyboard */; };
+		9277B2471C9B126100911514 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B2461C9B126100911514 /* Representative.swift */; };
+		9277B2491C9B13F600911514 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B2481C9B13F600911514 /* NetworkController.swift */; };
+		9277B24B1C9B15A700911514 /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B24A1C9B15A700911514 /* RepresentativeController.swift */; };
+		9277B24D1C9B193C00911514 /* RepresentativeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B24C1C9B193C00911514 /* RepresentativeSearchViewController.swift */; };
+		9277B24F1C9B195100911514 /* RepresentativeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B24E1C9B195100911514 /* RepresentativeListTableViewController.swift */; };
+		9277B2511C9B196200911514 /* RepresentativeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277B2501C9B196200911514 /* RepresentativeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		9277B23B1C9B0DB200911514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9277B23E1C9B0DB200911514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9277B2401C9B0DB200911514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9277B2461C9B126100911514 /* Representative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
+		9277B2481C9B13F600911514 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		9277B24A1C9B15A700911514 /* RepresentativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
+		9277B24C1C9B193C00911514 /* RepresentativeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeSearchViewController.swift; sourceTree = "<group>"; };
+		9277B24E1C9B195100911514 /* RepresentativeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeListTableViewController.swift; sourceTree = "<group>"; };
+		9277B2501C9B196200911514 /* RepresentativeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 			children = (
 				9277B2341C9B0DB200911514 /* AppDelegate.swift */,
 				9277B2381C9B0DB200911514 /* Main.storyboard */,
+				9277B2461C9B126100911514 /* Representative.swift */,
+				9277B2481C9B13F600911514 /* NetworkController.swift */,
+				9277B24A1C9B15A700911514 /* RepresentativeController.swift */,
+				9277B24C1C9B193C00911514 /* RepresentativeSearchViewController.swift */,
+				9277B24E1C9B195100911514 /* RepresentativeListTableViewController.swift */,
+				9277B2501C9B196200911514 /* RepresentativeDetailViewController.swift */,
 				9277B23B1C9B0DB200911514 /* Assets.xcassets */,
 				9277B23D1C9B0DB200911514 /* LaunchScreen.storyboard */,
 				9277B2401C9B0DB200911514 /* Info.plist */,
@@ -132,7 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9277B2471C9B126100911514 /* Representative.swift in Sources */,
+				9277B2511C9B196200911514 /* RepresentativeDetailViewController.swift in Sources */,
 				9277B2351C9B0DB200911514 /* AppDelegate.swift in Sources */,
+				9277B24F1C9B195100911514 /* RepresentativeListTableViewController.swift in Sources */,
+				9277B24B1C9B15A700911514 /* RepresentativeController.swift in Sources */,
+				9277B2491C9B13F600911514 /* NetworkController.swift in Sources */,
+				9277B24D1C9B193C00911514 /* RepresentativeSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
