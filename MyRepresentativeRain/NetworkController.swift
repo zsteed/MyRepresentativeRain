@@ -16,15 +16,16 @@ class NetworkController {
         return NSURL(string: baseURL + "/getall_reps_bystate.php?state=\(stateName)&output=json")!
     }
     
-    static func dataAtURL(url:NSURL, completion:(json:[String:AnyObject]?)->Void) {
+    static func dataAtURL(url:NSURL, completion:(json:[String:AnyObject]?, error:NSError?)->Void) {
         
         let session = NSURLSession.sharedSession()
         
         let dataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in
             if let data = data {
                 let jsonData = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
-                completion(json: jsonData!)
+                completion(json: jsonData!, error: nil)
             } else {
+                completion(json: nil, error: error)
                 print("Error serializing data")
             }
         }

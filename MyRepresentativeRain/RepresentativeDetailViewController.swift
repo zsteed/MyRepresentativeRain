@@ -28,6 +28,12 @@ class RepresentativeDetailViewController: UIViewController {
         self.representative = representative
         
         self.nameLabel.text = representative.name
+        self.partyLabel.text = representative.party
+        self.stateLabel.text = representative.state + " - " + representative.district
+        //self.districtLabel.text = representative.district
+        self.phoneLabel.text = representative.phone
+        self.addressLabel.text = representative.office
+        self.websiteLabel.text = representative.link
     }
     
     

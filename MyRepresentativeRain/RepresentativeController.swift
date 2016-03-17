@@ -14,22 +14,26 @@ class RepresentativeController {
     
     var myRepresentatives: [Representative] = []
     
-    static func searchForRepresentativeByState(state:String, completion:(representatives:[Representative]?)->Void) {
+    static func searchForRepresentativeByState(state:String, completion:(representatives:[Representative]?, error:NSError?)->Void) {
         
         let url = NetworkController.searchByState(state)
         
-        NetworkController.dataAtURL(url) { (json) -> Void in
+        NetworkController.dataAtURL(url) { (json, error) -> Void in
             if let jsonData = json {
                 var representatives = [Representative]()
                 if let results = jsonData["results"] as? [[String:AnyObject]] {
                     for result in results {
                         if let representative = Representative(jsonDictionary: result) {
                             representatives.append(representative)
-                            completion(representatives: representatives)
                         }
                     }
+                    completion(representatives: representatives, error: nil)
                 } else {
-                    completion(representatives: [])
+                    completion(representatives: [], error: error)
+                }
+            } else {
+                if let error = error {
+                    completion(representatives: [], error: error)
                 }
             }
         }

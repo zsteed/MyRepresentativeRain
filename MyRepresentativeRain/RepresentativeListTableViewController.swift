@@ -27,7 +27,7 @@ class RepresentativeListTableViewController: UITableViewController {
         let representative = RepresentativeController.sharedInstance.myRepresentatives[indexPath.row]
         
         cell.textLabel?.text = representative.name
-        cell.detailTextLabel?.text = representative.party
+        cell.detailTextLabel?.text = "Party: " + representative.party
 
         return cell
     }

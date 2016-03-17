@@ -23,21 +23,33 @@ class RepresentativeSearchViewController: UIViewController, UIPickerViewDataSour
     @IBAction func searchButtonTapped(sender: UIButton) {
         self.activityIndicator.hidden = false
         self.activityIndicator.startAnimating()
-        let rowIndex = self.pickerView.selectedRowInComponent(0)
         
+        let rowIndex = self.pickerView.selectedRowInComponent(0)
         let selectedState = self.states[rowIndex]
         
-        RepresentativeController.searchForRepresentativeByState(selectedState) { (representatives) -> Void in
-            if let representatives = representatives {
-                if representatives.count > 0 {
-                    RepresentativeController.sharedInstance.myRepresentatives = representatives
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.performSegueWithIdentifier("toListView", sender: self)
+        RepresentativeController.searchForRepresentativeByState(selectedState) { (representatives, error) -> Void in
+            if let error = error {
+                let alert = UIAlertController(title: "Error Retrieving Data", message: "Message: \(error.localizedDescription)", preferredStyle: .Alert)
+                let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                alert.addAction(action)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.presentViewController(alert, animated: true, completion: { () -> Void in
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.hidden = true
                     })
-                } else {
-                    print("Error searching for reps")
+                })
+            } else {
+                if let representatives = representatives {
+                    if representatives.count > 0 {
+                        RepresentativeController.sharedInstance.myRepresentatives = representatives
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.performSegueWithIdentifier("toListView", sender: self)
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.hidden = true
+                        })
+                    } else {
+                        print("Error searching for reps")
+                    }
                 }
             }
         }
