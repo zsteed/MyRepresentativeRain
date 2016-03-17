@@ -1,0 +1,5 @@
+# MyRepresentativeRain
+
+I used the whoismyrepresentative.com/api to pull representative data and display it in my app. I used the search by state option and implemented a picker view to display all 50 states. There is an activity indicator showing the user the app is pulling data form the internet. If no internet is available a alert will show up telling the user the issue and asking if they would like to go to their settings to change or update wifi or mobile data. When a user clicks find representative in their chosen state it displays a table view with each representative name and party. When they click on the table view cell they will be taken to a detail screen to show additional information concerning the chosen representative. I included a safari view controller to be available if the user would like to go to the website provided.
+
+As far as I am aware there are no deficiencies in the app. For speed I would implement dispatch_async to speed up the UI when displaying data. I’m proud of the safari view controller, it is simple to code and adds a lot to your app. 
