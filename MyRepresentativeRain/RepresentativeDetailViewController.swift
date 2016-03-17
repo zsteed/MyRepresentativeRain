@@ -7,20 +7,34 @@
 //
 
 import UIKit
+import SafariServices
 
-class RepresentativeDetailViewController: UIViewController {
+class RepresentativeDetailViewController: UIViewController, SFSafariViewControllerDelegate {
 
+    @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var websiteLabel: UILabel!
     
     var representative: Representative?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    @IBAction func websiteButtonTapped(sender: UIButton) {
+        if let representative = representative {
+            let svc = SFSafariViewController(URL: NSURL(string: representative.link)!)
+            svc.delegate = self
+            self.presentViewController(svc, animated: true, completion: nil)
+        }
+    }
+    
+    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func updateWithRepresentative(representative:Representative) {
@@ -31,7 +45,7 @@ class RepresentativeDetailViewController: UIViewController {
         self.stateLabel.text = representative.state + " - " + representative.district
         self.phoneLabel.text = representative.phone
         self.addressLabel.text = representative.office
-        self.websiteLabel.text = representative.link
+        self.websiteButton.setTitle("\(representative.link)", forState: .Normal)
     }
     
     

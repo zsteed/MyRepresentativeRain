@@ -30,8 +30,15 @@ class RepresentativeSearchViewController: UIViewController, UIPickerViewDataSour
         RepresentativeController.searchForRepresentativeByState(selectedState) { (representatives, error) -> Void in
             if let error = error {
                 let alert = UIAlertController(title: "Error Retrieving Data", message: "Message: \(error.localizedDescription)", preferredStyle: .Alert)
-                let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                alert.addAction(action)
+                let settingsAction = UIAlertAction(title: "Settings", style: .Default, handler: { (action) -> Void in
+                    let settings = NSURL(string: UIApplicationOpenSettingsURLString)
+                    if let url = settings {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
+                })
+                let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+                alert.addAction(settingsAction)
+                alert.addAction(cancel)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.presentViewController(alert, animated: true, completion: { () -> Void in
                         self.activityIndicator.stopAnimating()

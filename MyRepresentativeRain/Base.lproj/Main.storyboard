@@ -22,24 +22,25 @@
                                 <rect key="frame" x="20" y="64" width="560" height="280"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-lh-hS2">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="243"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="241"/>
                                         <connections>
                                             <outlet property="dataSource" destination="mah-HI-VpN" id="bxf-8l-ipU"/>
                                             <outlet property="delegate" destination="mah-HI-VpN" id="EZU-wD-qiE"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JE5-L3-39z">
-                                        <rect key="frame" x="0.0" y="243" width="560" height="37"/>
+                                        <rect key="frame" x="0.0" y="241" width="560" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-v0-kUJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="523" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="523" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Find Representatives"/>
                                                 <connections>
                                                     <action selector="searchButtonTapped:" destination="mah-HI-VpN" eventType="touchUpInside" id="48t-FO-m5k"/>
                                                 </connections>
                                             </button>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-ad-M2H">
-                                                <rect key="frame" x="523" y="0.0" width="37" height="37"/>
+                                                <rect key="frame" x="523" y="0.0" width="37" height="39"/>
                                                 <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
                                         </subviews>
@@ -246,27 +247,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqL-nh-E3H">
                                         <rect key="frame" x="0.0" y="244" width="560" height="49"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-cJ-Xr8">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-cJ-Xr8">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="49"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8z-6m-CUb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7S-Bf-50F">
-                                                        <rect key="frame" x="0.0" y="21" width="560" height="28"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Website Link">
-                                                                <attributes>
-                                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imO-wU-EFV">
+                                                        <rect key="frame" x="0.0" y="24" width="86" height="25"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="Website Link"/>
+                                                        <connections>
+                                                            <action selector="websiteButtonTapped:" destination="hGw-an-YcP" eventType="touchUpInside" id="bzY-hC-UZn"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -288,7 +285,7 @@
                         <outlet property="partyLabel" destination="20Q-V3-nnH" id="fbp-NW-PYd"/>
                         <outlet property="phoneLabel" destination="6QW-l7-opF" id="8pP-nO-BPP"/>
                         <outlet property="stateLabel" destination="mMa-8R-1oA" id="njP-oj-Ii0"/>
-                        <outlet property="websiteLabel" destination="Y7S-Bf-50F" id="YbU-Cy-Jwl"/>
+                        <outlet property="websiteButton" destination="imO-wU-EFV" id="sjZ-EX-sGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvj-By-WPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
